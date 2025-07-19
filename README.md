@@ -27,7 +27,7 @@ I am **Sattva Doshi**, a passionate Web Developer with **2.5 years of experience
 
 ## 📫 Connect with Me
 
-- ✉️ **Email:** sattvadoshi99@gmail.com  
+- ✉️ **Email:** sattva103@gmail.com  
 - 💼 **LinkedIn:** [linkedin.com/in/sattvadoshi](https://www.linkedin.com/in/sattva-doshi-37b0851bb/)  
 - 🌐 **Portfolio:** [https://sattvadoshi.vercel.app/](https://sattvadoshi.vercel.app/)
 
