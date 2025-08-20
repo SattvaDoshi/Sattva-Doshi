@@ -26,7 +26,7 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-gradient">Services</span>
+            My <span className="text-gradient">Services</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             We offer comprehensive digital solutions to help your business thrive

@@ -12,7 +12,7 @@ const projects = [
     id: 1,
     title: 'E-Commerce Platform',
     category: 'web',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600',
+    image: './projects/e-commerce-web.png',
     description: 'A modern e-commerce platform built with React and Node.js, featuring secure payments and inventory management.',
     overview: 'Modern e-commerce platform with React, Node.js, and Stripe integration. Features include real-time inventory management, advanced search filters, and seamless checkout experience.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redis', 'AWS'],
@@ -29,7 +29,7 @@ const projects = [
     duration: '3 months',
     teamSize: '4 developers',
     completed: 'March 2024',
-    liveUrl: '#',
+    liveUrl: 'https://style-hub-gilt.vercel.app/',
   },
   {
     id: 2,
@@ -79,7 +79,7 @@ const projects = [
     id: 4,
     title: 'Automated Email Sender',
     category: 'web',
-    image: 'https://images.unsplash.com/photo-1587614203976-365c74645e83?w=600',
+    image: './projects/autoEmail-Web.png',
     description: 'A web tool to schedule and send bulk personalized emails automatically.',
     overview: 'Built with Node.js and SendGrid API to allow scheduled and batch email campaigns with analytics dashboard.',
     technologies: ['Node.js', 'Express', 'SendGrid', 'MongoDB'],
@@ -104,7 +104,7 @@ const projects = [
     image: './projects/ai-content.png',
     description: 'Generate blog posts, product descriptions, and social media captions using AI.',
     overview: 'Frontend built with React, backed by OpenAI API for generating marketing and SEO content in real time.',
-    technologies: ['React', 'OpenAI API', 'Node.js', 'Tailwind'],
+    technologies: ['React', 'OpenAI API', 'Node.js', 'Tailwind', 'Razorpay'],
     keyFeatures: [
       'Topic-based content generation',
       'Tone and length control',
@@ -387,14 +387,6 @@ const projects = [
                     <div>
                       <p className="text-gray-400 text-sm">Duration</p>
                       <p className="text-white font-medium">{selectedProject.duration}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-3">
-                    <Users className="w-5 h-5 text-neon-cyan" />
-                    <div>
-                      <p className="text-gray-400 text-sm">Team Size</p>
-                      <p className="text-white font-medium">{selectedProject.teamSize}</p>
                     </div>
                   </div>
 
