@@ -53,7 +53,7 @@ const Footer = () => {
               <div className="p-2 rounded-lg bg-gradient-to-r from-neon-cyan to-neon-blue">
                 <Code className="h-6 w-6 text-dark-bg" />
               </div>
-              <span className="text-xl font-bold text-gradient">DevStudio</span>
+              <span className="text-xl font-bold text-gradient">WebifyNow</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
               We create stunning digital experiences that help businesses grow and succeed in the modern world.
@@ -95,7 +95,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} DevStudio. All rights reserved.
+            © {currentYear} WebifyNow. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="#" className="text-gray-400 hover:text-neon-cyan text-sm transition-colors duration-300">

@@ -33,7 +33,7 @@ const Navbar = () => {
             <div className="p-2 rounded-lg bg-gradient-to-r from-neon-cyan to-neon-blue">
               <Code className="h-6 w-6 text-dark-bg" />
             </div>
-            <span className="text-xl font-bold text-gradient">DevStudio</span>
+            <span className="text-xl font-bold text-gradient">WebifyNow</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -8,40 +8,27 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: 'Priya Sharma',
-      company: 'KiranaTech',
-      text: 'DevStudio transformed our online presence. Their attention to detail and technical expertise is unmatched.',
+      name: 'Kunal Mystery',
+      company: 'BOM - Brotherhood of Mumbai',
+      text: 'The ride booking platform they built for us has completely changed how we manage our club events. Real-time monitoring, group bookings, and the admin controls are absolutely top-notch.',
       rating: 5,
-      image: 'https://i.pravatar.cc/150?img=1', // Placeholder image for a woman
+      image: 'https://images.unsplash.com/flagged/photo-1571367034861-e6729ad9c2d5?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Placeholder image for a man
     },
     {
-      name: 'Arjun Verma',
-      company: 'GullyBuy',
-      text: 'Working with DevStudio was a game-changer. They delivered beyond our expectations and helped us scale.',
+      name: 'Neha Kapoor',
+      company: 'UrbanCart E-Commerce',
+      text: 'Their team delivered a scalable, fast, and beautifully optimized e-commerce web app for our brand. Our conversions went up significantly thanks to their clean UX and performance-focused design.',
       rating: 5,
-      image: 'https://i.pravatar.cc/150?img=2', // Placeholder image for a man
+      image: 'https://plus.unsplash.com/premium_photo-1682096111256-e020381ec730?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Placeholder image for a woman
     },
     {
-      name: 'Sneha Reddy',
-      company: 'ChaiCo',
-      text: 'Professional, creative, and reliable. DevStudio is our go-to development partner for all our digital needs.',
+      name: 'Vikram Saini',
+      company: 'DataSight Analytics',
+      text: 'The analytics dashboard they developed helped us visualize complex KPIs with ease. From live metrics to detailed reports, the solution exceeded our expectations.',
       rating: 5,
-      image: 'https://i.pravatar.cc/150?img=3', // Placeholder image for a woman
-    },
-    {
-      name: 'Rohan Mehta',
-      company: 'BharatAgri',
-      text: 'Exceptional quality and seamless communication throughout the entire project lifecycle. Highly recommended!',
-      rating: 5,
-      image: 'https://i.pravatar.cc/150?img=4', // Placeholder image for a man
-    },
-    {
-      name: 'Anjali Desai',
-      company: 'Apna Dukaan',
-      text: 'Outstanding results that exceeded our ROI expectations. They are a team of true professionals.',
-      rating: 5,
-      image: 'https://i.pravatar.cc/150?img=5', // Placeholder image for a woman
-    },
+      image: 'https://plus.unsplash.com/premium_photo-1689977871600-e755257fb5f8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // Placeholder image for a man
+    }
+
   ];
 
   const stats = [
@@ -60,7 +47,7 @@ const TestimonialsSection = () => {
   const goToPrevious = () => {
     setCurrentIndex(prev => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
-  
+
   const goToSlide = (index) => {
     setCurrentIndex(index);
   };
@@ -86,8 +73,8 @@ const TestimonialsSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                <CountingNumber 
-                  targetNumber={stat.number} 
+                <CountingNumber
+                  targetNumber={stat.number}
                   suffix={stat.suffix}
                   duration={2000}
                 />
@@ -120,7 +107,7 @@ const TestimonialsSection = () => {
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
-          
+
           <button
             onClick={goToNext}
             className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full glass-card glass-card-hover text-neon-cyan hover:text-white transition-colors duration-300 translate-x-1/2"
@@ -140,16 +127,16 @@ const TestimonialsSection = () => {
                 <div key={index} className="w-full flex-shrink-0 px-2">
                   <div className="glass-card glass-card-hover p-8 h-full flex flex-col items-center text-center">
                     {/* --- ADDED IMAGE --- */}
-                    <img 
+                    <img
                       src={testimonial.image}
                       alt={`Photo of ${testimonial.name}`}
                       className="w-24 h-24 rounded-full mb-4 border-2 border-neon-cyan/50 shadow-lg"
                     />
                     <div className="flex mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star 
-                          key={i} 
-                          className="h-5 w-5 text-neon-cyan fill-current animate-pulse" 
+                        <Star
+                          key={i}
+                          className="h-5 w-5 text-neon-cyan fill-current animate-pulse"
                           style={{ animationDelay: `${i * 100}ms` }}
                         />
                       ))}
@@ -172,11 +159,10 @@ const TestimonialsSection = () => {
                 key={index}
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to slide ${index + 1}`}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-neon-cyan scale-125' 
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                    ? 'bg-neon-cyan scale-125'
                     : 'bg-gray-600 hover:bg-gray-400'
-                }`}
+                  }`}
               />
             ))}
           </div>
