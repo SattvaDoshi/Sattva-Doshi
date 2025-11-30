@@ -27,7 +27,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-       await fetch('http://localhost:3000/contact', {
+       await fetch('https://sattva-doshi.onrender.com/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
