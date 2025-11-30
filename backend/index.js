@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
+import Form from './form.js';
+import mongoose from 'mongoose';
 
 dotenv.config();
 
@@ -12,17 +13,6 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
-// Create transporter
-const transporter = nodemailer.createTransport({
-  service: process.env.SMTP_SERVICE,
-  host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
-  secure: process.env.SMTP_SECURE === 'true',
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
@@ -35,29 +25,29 @@ app.post('/contact', async (req, res) => {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
-  const mailOptions = {
-    from: process.env.SMTP_USER,
-    to: 'sattva103@gmail.com',
-    subject: `Contact Form: ${subject}`,
-    html: `
-      <h2>New Contact Form Submission</h2>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Subject:</strong> ${subject}</p>
-      <p><strong>Message:</strong></p>
-      <p>${message.replace(/\n/g, '<br>')}</p>
-    `,
-  };
+  Form.create({ name, email, subject, message })
+    .then(() => {
+      res.status(201).json({ message: 'Form submitted successfully' });
+    })
+    .catch((err) => {
+      res.status(500).json({ error: 'Failed to submit form' });
+    });
+});
 
+app.get('/forms', async (req, res) => {
   try {
-    await transporter.sendMail(mailOptions);
-    res.status(200).json({ message: 'Email sent successfully' });
+    const forms = await Form.find().sort({ createdAt: -1 });
+    res.json(forms);
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ error: 'Failed to send email' });
+    res.status(500).json({ error: 'Failed to fetch forms' });
   }
 });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
+  mongoose.connect(process.env.MONGO_URI).then(() => {
+    console.log("Connected to MongoDB");
+  }).catch((err) => {
+    console.error("Failed to connect to MongoDB", err);
+  });
 });
