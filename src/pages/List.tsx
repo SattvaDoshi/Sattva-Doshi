@@ -21,7 +21,7 @@ const List: React.FC = () => {
       try {
         setLoading(true)
         setError(null)
-        const res = await fetch('http://localhost:3000/forms', { signal: controller.signal })
+        const res = await fetch('https://sattva-doshi.onrender.com/forms', { signal: controller.signal })
         if (!res.ok) throw new Error(`Server error: ${res.status}`)
         const data: FormItem[] = await res.json()
         setForms(data)
