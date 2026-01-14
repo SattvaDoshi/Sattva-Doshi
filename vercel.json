@@ -7,7 +7,7 @@
     { "src": "/terms", "dest": "/terms.html" },
     { "src": "/assets/(.*)", "dest": "/assets/$1" },
     { "src": "/projects/(.*)", "dest": "/projects/$1" },
-    { "src": "/(favicon\\.ico|logo\\.svg|Photo\\.jpg|placeholder\\.svg|.*\\.png|robots\\.txt)", "dest": "/$1" },
+    { "src": "/(favicon\\.ico|logo\\.svg|Photo\\.jpg|placeholder\\.svg|og-image\\.png|.*\\.png|robots\\.txt|sitemap\\.xml)", "dest": "/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

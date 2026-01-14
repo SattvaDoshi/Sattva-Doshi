@@ -6,18 +6,18 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Code,
-      title: 'Web Development',
-      description: 'Custom websites and web applications built with modern technologies.',
+      title: 'Custom Website Development',
+      description: 'Professional website design and development using React.js, Next.js, Node.js & TypeScript. Responsive, SEO-friendly websites for startups and businesses.',
     },
     {
       icon: Monitor,
-      title: 'UI/UX Design',
-      description: 'Beautiful, intuitive designs that provide exceptional user experiences.',
+      title: 'UI/UX Design & Landing Pages',
+      description: 'Beautiful, mobile-friendly landing page development with optimized UI/UX design. Conversion-focused designs that drive results.',
     },
     {
       icon: Users,
-      title: 'Consulting',
-      description: 'Strategic guidance to help your business succeed in the digital world.',
+      title: 'Full Stack Development',
+      description: 'End-to-end web application development including API integration, database setup, hosting & deployment for ecommerce and SaaS startups.',
     },
   ];
 
@@ -29,7 +29,7 @@ const ServicesSection = () => {
             My <span className="text-gradient">Services</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We offer comprehensive digital solutions to help your business thrive
+            Freelance web development services — from custom website development to SEO optimization, website maintenance, and performance improvements.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">

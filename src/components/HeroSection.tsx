@@ -9,10 +9,10 @@ const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const typingTexts = [
-    'Digital Solutions',
+    'Modern Websites',
     'Web Applications', 
-    'User Experiences',
-    'Modern Interfaces'
+    'SEO-Friendly Sites',
+    'Custom Solutions'
   ];
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const HeroSection = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              Freelance developer specializing in modern web applications and user experiences that bring your ideas to life.
+              Sattva Doshi — Freelance Full Stack Web Developer in Mumbai, India. I build fast, responsive, SEO-friendly websites for startups and small businesses. Available for remote projects worldwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
               <Link to="/projects" className="btn-glow inline-flex items-center">

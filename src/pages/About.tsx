@@ -124,7 +124,7 @@ const About = () => {
             </h1>
             <div className="relative inline-block">
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                A passionate Full Stack Developer creating exceptional web solutions that drive business growth and deliver outstanding user experiences.
+                A passionate Freelance Full Stack Web Developer based in Mumbai, Maharashtra, India. I specialize in React.js, Next.js, Node.js development and create responsive, SEO-friendly websites for startups, small businesses, and agencies worldwide. Available for remote web development projects.
               </p>
               <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan/20 to-neon-blue/20 rounded-lg blur opacity-25 animate-pulse"></div>
             </div>

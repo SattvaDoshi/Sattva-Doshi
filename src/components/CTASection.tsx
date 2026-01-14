@@ -9,10 +9,10 @@ const CTASection = () => {
       <div className="max-w-4xl mx-auto text-center items-center">
         <div className="glass-card glass-card-hover p-12">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            Ready to <span className="text-gradient">Get Started?</span>
+            Ready to <span className="text-gradient">Hire a Web Developer?</span>
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Let's discuss your project and bring your vision to life
+            Looking for a freelance web developer for your startup or business? Let's discuss your custom website development project and bring your vision to life.
           </p>
           <div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>
             <Link to="/contact" className="btn-glow inline-flex items-center">

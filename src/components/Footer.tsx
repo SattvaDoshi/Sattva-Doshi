@@ -17,10 +17,10 @@ const Footer = () => {
     {
       title: 'Services',
       links: [
-        { name: 'Web Development', href: '#' },
-        { name: 'Mobile Apps', href: '#' },
-        { name: 'UI/UX Design', href: '#' },
-        { name: 'SEO Services', href: '#' },
+        { name: 'Custom Website Development', href: '/contact' },
+        { name: 'Landing Page Development', href: '/contact' },
+        { name: 'Ecommerce Website Development', href: '/contact' },
+        { name: 'Website Redesign & Maintenance', href: '/contact' },
       ],
     },
     {
@@ -53,10 +53,10 @@ const Footer = () => {
               <div className="p-2 rounded-lg bg-gradient-to-r from-neon-cyan to-neon-blue">
                 <Code className="h-6 w-6 text-dark-bg" />
               </div>
-              <span className="text-xl font-bold text-gradient">WebifyNow</span>
+              <span className="text-xl font-bold text-gradient">Sattva Doshi</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
-              We create stunning digital experiences that help businesses grow and succeed in the modern world.
+              Freelance Full Stack Web Developer in Mumbai, India. Specializing in React.js, Next.js, Node.js development. Building responsive, SEO-friendly websites for startups and businesses worldwide.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -95,7 +95,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} WebifyNow. All rights reserved.
+            © {currentYear} Sattva Doshi | Freelance Web Developer in Mumbai, India. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="#" className="text-gray-400 hover:text-neon-cyan text-sm transition-colors duration-300">
