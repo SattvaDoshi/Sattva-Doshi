@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
   ];
 
   const stats = [
-    { number: 50, suffix: '+', label: 'Projects Completed' },
+    { number: 15, suffix: '+', label: 'Projects Completed' },
     { number: 100, suffix: '%', label: 'Client Satisfaction' },
     { number: 3, suffix: '+', label: 'Years Experience' },
     { number: 24, suffix: '/7', label: 'Support Available' }

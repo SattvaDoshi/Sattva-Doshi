@@ -1,20 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code } from 'lucide-react';
+import { Menu, X, Terminal } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -24,68 +15,68 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'glass-card py-2' : 'bg-transparent py-4'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 rounded-lg bg-gradient-to-r from-neon-cyan to-neon-blue">
-              <Code className="h-6 w-6 text-dark-bg" />
-            </div>
-            <span className="text-xl font-bold text-gradient">Sattva Doshi</span>
-          </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+      <div className="max-w-7xl mx-auto glass-card rounded-full px-8 py-3 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 group cursor-pointer">
+          <div className="w-8 h-8 bg-gradient-to-r from-neon-cyan to-neon-blue rounded-lg flex items-center justify-center text-white">
+            <Terminal className="h-5 w-5" />
+          </div>
+          <span className="text-xl font-bold tracking-tight text-white">Sattva Doshi</span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
-                  location.pathname === item.path
-                    ? 'text-neon-cyan'
-                    : 'text-gray-300 hover:text-white'
-                }`}
-              >
-                {item.name}
-                {location.pathname === item.path && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-neon-cyan to-neon-blue rounded-full" />
-                )}
-              </Link>
-            ))}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-10">
+          {navItems.map((item) => (
             <Link
-              to="/contact"
-              className="btn-glow"
+              key={item.name}
+              to={item.path}
+              className={`text-sm font-medium transition-colors ${
+                location.pathname === item.path
+                  ? 'text-neon-cyan'
+                  : 'text-gray-300 hover:text-neon-cyan'
+              }`}
             >
-              Get Started
+              {item.name}
             </Link>
-          </div>
+          ))}
+        </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg glass-card glass-card-hover"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6 text-white" />
-              ) : (
-                <Menu className="h-6 w-6 text-white" />
-              )}
-            </button>
-          </div>
+        {/* Desktop CTA Button */}
+        <div className="hidden md:flex items-center gap-4">
+          <Link
+            to="/contact"
+            className="bg-gradient-to-r from-neon-cyan to-neon-blue hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 active:scale-95"
+          >
+            Let's Talk
+          </Link>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden mt-4 glass-card p-4 animate-slide-up">
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+          >
+            {isOpen ? (
+              <X className="h-6 w-6 text-white" />
+            ) : (
+              <Menu className="h-6 w-6 text-white" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="md:hidden mt-4 mx-6">
+          <div className="glass-card rounded-3xl p-6 animate-slide-up">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`px-3 py-2 text-base font-medium transition-colors duration-300 ${
+                  className={`px-3 py-2 text-base font-medium transition-colors ${
                     location.pathname === item.path
                       ? 'text-neon-cyan'
                       : 'text-gray-300 hover:text-white'
@@ -97,16 +88,16 @@ const Navbar = () => {
               ))}
               <Link
                 to="/contact"
-                className="btn-glow text-center"
+                className="bg-gradient-to-r from-neon-cyan to-neon-blue hover:opacity-90 text-white px-6 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 active:scale-95 text-center mt-2"
                 onClick={() => setIsOpen(false)}
               >
-                Get Started
+                Let's Talk
               </Link>
             </div>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      )}
+    </header>
   );
 };
 
